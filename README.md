@@ -5,7 +5,7 @@ You can set this with:
 
 REFERENCE="/example/absolute/path/to/reference.fasta"
 You can have this automatically set every time you start a cluster session by modifying your .bashrc file to include this, but is not necessary.
-
+Some also set this internally in the script, and would need to be checked before just being run, as many use an out of date reference.
 
 File locations of key data input:
 /scratch/nchen11_lab/dseidmanProcesses/beadchipAnalysis/final.assembly.fasta
@@ -31,7 +31,11 @@ Note: some midpoint names are hardcoded.
 Tool2: BeadchipProbes_mod.R
 Similar to what Nancy uses for beadchip probe processing, but with a few formatting modifications to function in my scripts.
 
+Tool3: beagleRun.sh
+This one's fairly hardcoded, so it shouldn't just be run as is, but it contains the line I used to run the beagle algorithm for imputation testing purposes, NOT for just phasing.
 
+Tool4: scrubBeagleRun.sh
+This one's fairly hardcoded, so it shouldn't just be run as is, but it contains the line I used to run the beagle algorithm for PHASING purposes, NOT for imputation. 
 
 Instructions for using other tools:
 
@@ -47,7 +51,9 @@ unzip AlphaImpute2.zip -d AlphaImpute2
 cd AlphaImpute2
 python setup.py build
 
-
+For beagle phasing:
+/scratch/dseidman/bin/beagle.r1399.jar
+Is the jar file used by the 
 
 I have a version of the former at: /scratch/dseidman/bin/AlphaImpute
 and the latter at: /scratch/dseidman/bin/AlphaImpute2
